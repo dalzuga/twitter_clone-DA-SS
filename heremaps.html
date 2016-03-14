@@ -72,34 +72,6 @@
 
             zoomrectangle.setAlignment('right-middle');
 
-            //            // Add 'Zoom in' context menu item
-            //            map.addEventListener('contextmenu', function(e) {
-            //            e.items.push(new H.util.ContextItem({
-            //            label: 'Hello Holberton School!',
-            //            callback: function() {
-            //            map.setZoom(map.getZoom() + 1);
-            //            }
-            //            }));
-            //            });
-
-            //            map.addEventListener('tap', function (evt) {
-            //            console.log('Clicked at ' + evt.currentPointer.viewportX + ',' +
-            //            evt.currentPointer.viewportY);
-            //            });
-
-            //            function setUpClickListener(map) {
-            //            map.addEventListener('tap', function (evt) {
-            //            var coord = map.screenToGeo(evt.currentPointer.viewportX,
-            //            evt.currentPointer.viewportY);
-            //            console.log('Clicked at ' + Math.abs(coord.lat.toFixed(4)) +
-            //            ((coord.lat > 0) ? 'N' : 'S') +
-            //            ' ' + Math.abs(coord.lng.toFixed(4)) +
-            //            ((coord.lng > 0) ? 'E' : 'W'));
-            //            });
-            //            }
-            //            
-            //            var callfunction = setUpClickListener(map);
-
             // Add map context menu event listener.
             map.addEventListener('contextmenu', onContextMenuRequested);
 
@@ -130,7 +102,6 @@
              * adds a context menu item showing the associated address.
              */
             function onRGCResult(result, contextMenuEvent) {
-                // var currentTarget = result;
                 var addressLabel = result.Response.View[0].Result[0]; // TODO: find the response JSON path to get the address label.
 
                 contextMenuEvent.items.push(new H.util.ContextItem({
