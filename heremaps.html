@@ -80,11 +80,23 @@
             }));
             });
 
-            map.addEventListener('tap', function (evt) {
-            console.log('Clicked at ' + evt.currentPointer.viewportX + ',' +
-            evt.currentPointer.viewportY);
-            });
+//            map.addEventListener('tap', function (evt) {
+//            console.log('Clicked at ' + evt.currentPointer.viewportX + ',' +
+//            evt.currentPointer.viewportY);
+//            });
 
+            
+            map.addEventListener('tap', function (evt) {
+            var coord = map.screenToGeo(evt.currentPointer.viewportX,
+            evt.currentPointer.viewportY);
+            console.log('Clicked at ' + Math.abs(coord.lat.toFixed(4)) +
+            ((coord.lat > 0) ? 'N' : 'S') +
+            ' ' + Math.abs(coord.lng.toFixed(4)) +
+            ((coord.lng > 0) ? 'E' : 'W'));
+            });
+            
+            map.addEventListener('tap')
+            
             // adjust map on resize
             window.addEventListener('resize', function () {
             map.getViewPort().resize();
