@@ -75,32 +75,33 @@
             // Add map context menu event listener.
             map.addEventListener('contextmenu', onContextMenuRequested);
 
-        function onContextMenuRequested(e) {
-            // TODO: add the context menu item to get the result as shown below.
+            function onContextMenuRequested(e) {
+                // TODO: add the context menu item to get the result as shown below.
 
-            var coordinates = map.screenToGeo(e.viewportX, e.viewportY);
-            var gc = platform.getGeocodingService();
-            var rgcParams = {
-                prox: Math.abs(coordinates.lat.toFixed(4)) +
-                    ',-' + Math.abs(coordinates.lng.toFixed(4))
-                , mode: 'retrieveAddresses'
-                , maxresults: 1
-            };
-            var contextMenuEvent = new H.mapevents.ContextMenuEvent(e.viewportX, e.viewportY);
+                var coordinates = map.screenToGeo(e.viewportX, e.viewportY);
+                var gc = platform.getGeocodingService();
+                var rgcParams = {
+                    prox: Math.abs(coordinates.lat.toFixed(4)) +
+                        ',-' + Math.abs(coordinates.lng.toFixed(4))
+                    , mode: 'retrieveAddresses'
+                    , maxresults: 1
+                };
+                var contextMenuEvent = new H.mapevents.ContextMenuEvent(e.viewportX, e.viewportY);
 
-            contextMenuEvent.currentTarget = map;
+                contextMenuEvent.currentTarget = map;
 
-            // Send the RGC request over.
-            gc.reverseGeocode(rgcParams, function(result) {
-            onRGCResult(result, contextMenuEvent);
-            }, function(error) {
-            console.log(error);
-            });
-        }
+                // Send the RGC request over.
+                gc.reverseGeocode(rgcParams, function(result) {
+                onRGCResult(result, contextMenuEvent);
+                }, function(error) {
+                console.log(error);
+                });
+            }
             /**
              * Processes reverse geocoder response and
              * adds a context menu item showing the associated address.
              */
+            
             function onRGCResult(result, contextMenuEvent) {
                 var addressLabel = result.Response.View[0].Result[0]; // TODO: find the response JSON path to get the address label.
 
@@ -112,10 +113,10 @@
 
             }
 
-            // adjust map on resize
-            window.addEventListener('resize', function () {
-                map.getViewPort().resize();
-            });
+        // adjust map on resize
+        window.addEventListener('resize', function () {
+            map.getViewPort().resize();
+        });
         </script>
     </div>
 </body>
