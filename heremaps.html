@@ -86,6 +86,8 @@
 //            });
 
             
+            
+            function setUpClickListener(map) {
             map.addEventListener('tap', function (evt) {
             var coord = map.screenToGeo(evt.currentPointer.viewportX,
             evt.currentPointer.viewportY);
@@ -94,8 +96,9 @@
             ' ' + Math.abs(coord.lng.toFixed(4)) +
             ((coord.lng > 0) ? 'E' : 'W'));
             });
+            }
             
-            map.addEventListener('tap')
+            var exception = setUpClickListener(map);
             
             // adjust map on resize
             window.addEventListener('resize', function () {
