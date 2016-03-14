@@ -44,16 +44,19 @@
             center: { lng: -122.39972, lat: 37.79202 }
             });
             
+            // Retrieve the target element for the map:
+            var targetElement = document.getElementById('mapContainer');
+            
             // Create the default UI:
             var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
 
             // Create an info bubble object at a specific geographic location:
-/*            var bubble = new H.ui.InfoBubble({ lng: -122.39972, lat: 37.79202 }, {
+            var bubble = new H.ui.InfoBubble({ lng: -122.39972, lat: 37.79202 }, {
             content: '<b>Hello World!</b>'
             });
 
             // Add info bubble to the UI:
-            ui.addBubble(bubble);*/
+            ui.addBubble(bubble);
 
             var name = 'zoomrectangle'
             var control = new H.ui.ZoomRectangle;
@@ -62,8 +65,20 @@
 
             var zoomrectangle = ui.getControl('zoomrectangle')
             
+            zoomrectangle.setAlignment('right-middle');
+            
                         // Enable map events, like "contextmenu"
             var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+            
+            // Add 'Zoom in' context menu item
+            map.addEventListener('contextmenu', function(e) {
+            e.items.push(new H.util.ContextItem({
+            label: 'Hello Holberton School!',
+            callback: function() {
+            map.setZoom(map.getZoom() + 1);
+            }
+            }));
+            });
 
             // adjust map on resize
             window.addEventListener('resize', function () {
