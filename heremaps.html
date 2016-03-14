@@ -104,16 +104,16 @@
             map.addEventListener('contextmenu', onContextMenuRequested);
 
         function onContextMenuRequested(e) {
-                // TODO: add the context menu item to get the result as shown below.
+            // TODO: add the context menu item to get the result as shown below.
 
-                var coordinates = map.screenToGeo(e.viewportX, e.viewportY);
-                var gc = platform.getGeocodingService();
-                var rgcParams = {
-                    prox: Math.abs(coordinates.lat.toFixed(4)) +
-                        ',-' + Math.abs(coordinates.lng.toFixed(4))
-                    , mode: 'retrieveAddresses'
-                    , maxresults: 1
-                };
+            var coordinates = map.screenToGeo(e.viewportX, e.viewportY);
+            var gc = platform.getGeocodingService();
+            var rgcParams = {
+                prox: Math.abs(coordinates.lat.toFixed(4)) +
+                    ',-' + Math.abs(coordinates.lng.toFixed(4))
+                , mode: 'retrieveAddresses'
+                , maxresults: 1
+            };
             var contextMenuEvent = new H.mapevents.ContextMenuEvent(e.viewportX, e.viewportY);
 
             contextMenuEvent.currentTarget = map;
