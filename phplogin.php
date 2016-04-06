@@ -38,13 +38,13 @@
             if (isset($_POST['login']) && !empty($_POST['username'])
                && !empty($_POST['password'])) {
 
-               if ($_POST['username'] == 'tutorialspoint' &&
-                  $_POST['password'] == '1234') {
+               if ($_POST['username'] == 'impossible' &&
+                  $_POST['password'] == 'octopus') {
                   $_SESSION['valid'] = true;
                   $_SESSION['timeout'] = time();
                   $_SESSION['username'] = 'tutorialspoint';
 
-                  echo 'You have entered valid use name and password';
+                  echo 'You have entered a valid username and password';
                }else {
                   $msg = 'Wrong username or password';
                }
