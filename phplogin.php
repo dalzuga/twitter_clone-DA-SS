@@ -42,7 +42,7 @@
                   $_POST['password'] == 'octopus') {
                   $_SESSION['valid'] = true;
                   $_SESSION['timeout'] = time();
-                  $_SESSION['username'] = 'tutorialspoint';
+                  $_SESSION['username'] = 'octopus';
 
                   echo 'You have entered a valid username and password';
                }else {
