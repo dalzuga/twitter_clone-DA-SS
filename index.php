@@ -45,6 +45,7 @@
                   $_SESSION['username'] = 'octopus';
 
                   echo 'You have entered a valid username and password';
+
                }else {
                   $msg = 'Wrong username or password';
                }
