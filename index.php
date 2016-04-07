@@ -38,6 +38,16 @@
                 </div>
                 <div class="account">
                     <ul class="">
+                        <li>
+                          <a href="#">
+                            <<?php
+                              if (!empty($_POST['username']))
+                              {
+                                echo 'testing';
+                              }
+                             ?>
+                          </a>
+                        </li>
                         <li><a href="#">Edit my profile</a></li>
                         <li><a href="#">Log out</a></li>
                     </ul>
