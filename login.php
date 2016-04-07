@@ -4,25 +4,12 @@
     <title>Dan and Sravanthi's Twitter Clone Adventure</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS style sheet -->
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/mediaqueryhigh.css">
-    <link rel="stylesheet" href="styles/mediaquerymid.css">
-    <link rel="stylesheet" href="styles/mediaquerylow.css">
+    <link rel="stylesheet" href="styles/resetlogin.css">
+    <link rel="stylesheet" href="styles/login.css">
     <!-- CSS style sheet -->
     <!-- Fav Icon -->
     <link rel="shortcut icon" type="image/png" href="images/leaf_960_720.png">
     <!-- Fav Icon -->
-    <script src="scripts/enablejs.js"></script>
-    <script src="scripts/post_a_status.js"></script>
-    <script src="scripts/reply.js"></script>
-    <script src="scripts/toggle.js"></script>
-    <script src="scripts/behaviour.js"></script>
-    <script src="scripts/sticky_smart_header.js"></script>
-    <script src="scripts/ajax.js"></script>
-    <script src="scripts/load_more.js"></script>
-    <script src="scripts/weather.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
 
 </head>
 
@@ -30,7 +17,7 @@
   <div class="container">
 
       <h2>Enter Username and Password</h2>
-      <div class = "container form-signin">
+      <div class = "container_form">
 
          <?php
             $msg = '';
@@ -51,13 +38,10 @@
                }
             }
          ?>
-      </div> <!-- /container -->
 
-      <div class = "container form-boxes">
 
          <form class = "form-signin" role = "form"
-            action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);
-            ?>" method = "post">
+            action = "" method = "post">
             <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
             <input type = "text" class = "form-control"
                name = "username" placeholder = "username = impossible"
@@ -69,22 +53,6 @@
          </form>
 
       </div>
-
-      <form id='login' action='login.php' method='post' accept-charset='UTF-8'>
-        <fieldset >
-          <legend>Login</legend>
-          <input type='hidden' name='submitted' id='submitted' value='1'/>
-
-          <label for='username' >UserName*:</label>
-          <input type='text' name='username' id='username'  maxlength="50" />
-
-          <label for='password' >Password*:</label>
-          <input type='password' name='password' id='password' maxlength="50" />
-
-          <input type='submit' name='Submit' value='Submit' />
-
-        </fieldset>
-      </form>
 
     </div>
   </body>

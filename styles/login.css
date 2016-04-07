@@ -1,0 +1,11 @@
+body {
+  display: flex;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.container_form {
+  width: 400px;
+}
