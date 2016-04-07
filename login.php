@@ -19,29 +19,8 @@
       <h2>Enter Username and Password</h2>
       <div class = "container_form">
 
-         <?php
-            $msg = '';
-
-            if (isset($_POST['login']) && !empty($_POST['username'])
-               && !empty($_POST['password'])) {
-
-               if ($_POST['username'] == 'impossible' &&
-                  $_POST['password'] == 'octopus') {
-                  $_SESSION['valid'] = true;
-                  $_SESSION['timeout'] = time();
-                  $_SESSION['username'] = 'octopus';
-
-                  echo 'You have entered a valid username and password';
-
-               }else {
-                  $msg = 'Wrong username or password';
-               }
-            }
-         ?>
-
-
          <form class = "form-signin" role = "form"
-            action = "" method = "post">
+            action = "/index.php" method = "post">
             <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
             <input type = "text" class = "form-control"
                name = "username" placeholder = "username = impossible"
