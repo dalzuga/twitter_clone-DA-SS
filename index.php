@@ -40,10 +40,12 @@
                     <ul class="">
                         <li>
                           <a href="#">
-                            <<?php
-                              if (!empty($_POST['username']))
+                            <?php
+                              if (isset($_POST['login']))
                               {
-                                echo 'testing';
+                                echo "Hello, ";
+                                echo $_POST['username'];
+                                echo "!";
                               }
                              ?>
                           </a>

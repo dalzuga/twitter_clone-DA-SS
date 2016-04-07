@@ -17,18 +17,18 @@
   <div class="container">
 
       <h2>Enter Username and Password</h2>
-      <div class = "container_form">
+      <div class="container_form">
 
-         <form class = "form-signin" role = "form"
-            action = "/index.php" method = "post">
-            <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
-            <input type = "text" class = "form-control"
-               name = "username" placeholder = "username = impossible"
+         <form class="form-signin" role="form"
+            action="/index.php" method="post">
+            <h4 class="form-signin-heading"><?php echo $msg; ?></h4>
+            <input type="text" class="form-control"
+               name="username" placeholder="username=impossible"
                required autofocus></br>
-            <input type = "password" class = "form-control"
-               name = "password" placeholder = "password = octopus" required>
-            <button class = "btn btn-lg btn-primary btn-block" type = "submit"
-               name = "login">Login</button>
+            <input type="password" class="form-control"
+               name="password" placeholder="password=octopus" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit"
+               name="login">Login</button>
          </form>
 
       </div>
