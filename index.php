@@ -40,14 +40,16 @@
                     <ul class="">
                         <li>
                           <a href="#">
-                            <pre>
                             <?php
                               if (isset($_POST['login']))
                               {
-                                echo var_dump($_POST);
-                                echo print_r($_POST);
+                                $username = $_POST['username'];
+                                echo "Hello, $username!";
                               }
-                             ?></pre>
+                              else {
+                                echo "Hello, there!";
+                              }
+                             ?>
                           </a>
                         </li>
                         <li><a href="#">Edit my profile</a></li>
