@@ -4,7 +4,7 @@ $users = [
     array("id" => 2, "login" => "user2", "password" => "password2", "full_name" => "User 2"),
     array("id" => 3, "login" => "user3", "password" => "password3", "full_name" => "User 3"),
   ];
- ?> /*starting task 5*/
+ /*starting task 5*/?>
 
 <!DOCTYPE html>
 
