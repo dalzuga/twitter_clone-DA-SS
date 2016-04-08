@@ -61,13 +61,18 @@
             <nav class="nav-show">
 
                 <ul>
-
                     <li><a href="index.html" class="navButton">Home</a></li>
                     <li><a href="user.html" class="navButton">My Statuses</a></li>
                     <li><a href="users.html" class="navButton">All Users</a></li>
                     <li><a href="AboutUs.html" class="navButton">About Us</a></li>
                     <li><a href="contactus.html" class="navButton">Contact Us</a></li>
                 </ul>
+                <?php
+                  if (isset($_POST['login'])) {
+                    echo "<p>Your rot13d login is: " . str_rot13($_POST['username']);
+                    echo "</p>The length of your login is: " . strlen($_POST['username']);
+                  }
+                 ?>
             </nav>
         </header>
 
